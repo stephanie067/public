@@ -1,0 +1,52 @@
+<script>
+
+//Code cash
+
+alert ('Bem vindo ao Code Cash!');
+
+const nome_usuario = prompt('Qual o seu nome?');
+
+alert (`Olá, ${nome_usuario}!`);
+
+let conta = 0;
+
+function main (){
+    const operacao = Number(prompt(`Escolha a operação:
+    
+    1 - Consultar saldo
+    2 - Depositar o valor
+    3 - Sacar o valor
+    4 - Sair
+    `));
+
+    switch (operacao) {
+        case 1:
+            alert (`Seu saldo é: ${conta}`);
+            main()
+        case 2:
+            const deposito = Number(prompt( 'Qual o valor do deposito?'));
+            conta = conta + deposito;
+            alert(`Seu saldo atual é ${conta}`);
+            main()
+        case 3: 
+            const saque = Number(prompt('Qual o valor do saque?'));
+            if (saque > conta) {
+                alert ('Saldo insuficiente.')
+                main()
+            } else {
+                conta = conta - saque;
+                alert(`Seu saldo atual é ${conta}`);
+                main()
+            }
+        case 4:
+            alert(`Foi um prazer atende-lo. Volte logo ${nome_usuario}! Code Cash agradece sua preferência.`);
+            main();
+        default: 
+        alert ('Operação invalida');
+        main();
+    };
+};
+
+main();
+
+</script>
