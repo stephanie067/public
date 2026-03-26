@@ -9,12 +9,24 @@
     <title>Logger</title>
 </head>
 <body>
+    <p>Digite um número e veja o dobro dele.</p>
+    <input type="number" placeholder="Digite um numero" />
+    <button>dobrar</button>
+    <h1></h1>
 
     <script>
 
-    const somar = (numero) => numero * 2;
+        const numero = document.querySelector('input');
+        const botao = document.querySelector('button'); 
+        const titulo = document.querySelector('h1');
 
-    console.log(dobrar(10));
+        botao.addEventListener('click', () => {
+            const valor = numero.value;
+
+            const resultado = valor * 2;
+
+            titulo.textContent = resultado;
+        });
 
     </script>
 
